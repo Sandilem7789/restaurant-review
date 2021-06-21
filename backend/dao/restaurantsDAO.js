@@ -58,6 +58,7 @@ export default class RestaurantsDAO {
   }
   static async getRestaurantByID(id) {
     try {
+      //here we are using the aggregation framework to model the result into a certain shape.
       const pipeline = [
         {
             $match: {

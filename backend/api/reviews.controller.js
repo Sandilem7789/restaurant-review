@@ -3,6 +3,8 @@ import ReviewsDAO from "../dao/reviewsDAO.js"
 export default class ReviewsController {
   static async apiPostReview(req, res, next) {
     try {
+
+      //we get information from the body of the request.
       const restaurantId = req.body.restaurant_id
       const review = req.body.text
       const userInfo = {
@@ -25,13 +27,15 @@ export default class ReviewsController {
 
   static async apiUpdateReview(req, res, next) {
     try {
+
+      //we are getting data from the body.
       const reviewId = req.body.review_id
       const text = req.body.text
       const date = new Date()
 
       const reviewResponse = await ReviewsDAO.updateReview(
         reviewId,
-        req.body.user_id,
+        req.body.user_id,       //WE NEED THE USER ID SO WE KNOW WHICH USER MADE THE REVIEW
         text,
         date,
       )
@@ -67,5 +71,4 @@ export default class ReviewsController {
       res.status(500).json({ error: e.message })
     }
   }
-
 }

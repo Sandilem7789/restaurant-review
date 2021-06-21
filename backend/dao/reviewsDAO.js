@@ -1,5 +1,5 @@
 import mongodb from "mongodb"
-const ObjectId = mongodb.ObjectID
+const ObjectId = mongodb.ObjectID  //CONVERTING A STRING INTO A MONGODB OBJECT STRING
 
 let reviews
 

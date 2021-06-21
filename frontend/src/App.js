@@ -10,6 +10,8 @@ import Login from "./components/login";
 function App() {
   const [user, setUser] = React.useState(null);
 
+  //this log in logout function is a dummy function, the users are not stored in the database
+  //but one could update it to be a fuly flegded function 
   async function login(user = null) {
     setUser(user);
   }
