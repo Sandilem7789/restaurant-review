@@ -12,6 +12,7 @@ function App() {
 
   //this log in logout function is a dummy function, the users are not stored in the database
   //but one could update it to be a fuly flegded function 
+  //this login function is gonna be passed in the login page (login.js)
   async function login(user = null) {
     setUser(user);
   }

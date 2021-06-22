@@ -20,9 +20,9 @@ const Login = props => {
   }
 
   return (
-    <div className="submit-form">
+    <div className="submit-form offset-sm-4">
       <div>
-        <div className="form-group">
+        <div className="form-group col-sm-6">
           <label htmlFor="user">Username</label>
           <input
             type="text"
@@ -35,7 +35,7 @@ const Login = props => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-group col-sm-6 pb-1">
           <label htmlFor="id">ID</label>
           <input
             type="text"

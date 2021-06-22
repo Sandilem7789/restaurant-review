@@ -1,5 +1,8 @@
+//THIS IS A SERVICE FILE CONNECTING THE FRONT-END AND THE BACK-END USING
+//A HELPER FILE HTTP-COMMON.JS TO QUERY THE DATABASE
 import http from "../http-common";
 
+//ALL THE FUNCTION THAT MAKE API CALLS
 class RestaurantDataService {
   getAll(page = 0) {
     return http.get(`restaurants?page=${page}`);

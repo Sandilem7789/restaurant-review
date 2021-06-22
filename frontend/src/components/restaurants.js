@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import RestaurantDataService from "../services/restaurant";
 import { Link } from "react-router-dom";
 
+//this function is structured like this since we want to pass in props
 const Restaurant = props => {
   const initialRestaurantState = {
     id: null,
@@ -23,6 +24,8 @@ const Restaurant = props => {
       });
   };
 
+  //'getRestaurant' is called as soon as the component loads
+  //this useEffect i.e 'getRestaurant' is only going again to be called if the array '[props.match.params.id]' is updated.
   useEffect(() => {
     getRestaurant(props.match.params.id);
   }, [props.match.params.id]);

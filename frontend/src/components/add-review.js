@@ -13,13 +13,17 @@ const AddReview = props => {
   }
 
   const [review, setReview] = useState(initialReviewState);
+  
+  //hook for submitting the review
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = event => {
     setReview(event.target.value);
   };
 
+  //function for saving the review
   const saveReview = () => {
+    //schema of the data that is going to be created by the function
     var data = {
       text: review,
       name: props.user.name,
@@ -27,9 +31,10 @@ const AddReview = props => {
       restaurant_id: props.match.params.id
     };
 
+    //if editing is true: if we are editing
     if (editing) {
       data.review_id = props.location.state.currentReview._id
-      RestaurantDataService.updateReview(data)
+      RestaurantDataService.updateReview(data)                    //calling a function from restaurant.js
         .then(response => {
           setSubmitted(true);
           console.log(response.data);
