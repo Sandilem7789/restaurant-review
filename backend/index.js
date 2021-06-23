@@ -12,9 +12,10 @@ MongoClient.connect(
   process.env.RESTREVIEWS_DB_URI,
   {
     poolSize: 50,
-    wtimeout: 2500,
-    useNewUrlParse: true }
-  )
+    wtimeout: 5500,
+    useNewUrlParse: true,
+    useUnifiedTopology: true 
+  })
   .catch(err => {
     console.error(err.stack)
     process.exit(1)

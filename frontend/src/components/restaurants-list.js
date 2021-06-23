@@ -165,7 +165,7 @@ const RestaurantsList = props => {
         {restaurants.map((restaurant) => {
           const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
           return (
-            <div className='col-lg-4 pb-1'>
+            <div className='col-lg-4 pb-1' key={restaurant.address.street}>
               <div className='card'>
                 <div className='card-body'>
                   <h5 className='card-title'>{restaurant.name}</h5>
