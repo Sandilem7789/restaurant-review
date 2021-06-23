@@ -1,6 +1,7 @@
 // This function is the webhook's request handler.
 exports = async function(payload, response) {
   
+//payload is similar to 'req'
   const id = payload.query.id || ""
 
   const restaurants = context.services.get("mongodb-atlas").db("sample_restaurants").collection("restaurants");
