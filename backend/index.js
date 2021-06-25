@@ -11,10 +11,10 @@ const port = process.env.PORT || 8000
 MongoClient.connect(
   process.env.RESTREVIEWS_DB_URI,
   {
-    poolSize: 50,
-    wtimeout: 5500,
-    useNewUrlParse: true,
-    useUnifiedTopology: true 
+    poolSize: 50,               //max number of connections at a time
+    wtimeout: 5500,             //if a request exceeds this 5500 ms it will timeout
+    useNewUrlParse: true,       //needed by the new mongo driver
+    useUnifiedTopology: true    //needed byt hte new node mongo driver
   })
   .catch(err => {
     console.error(err.stack)

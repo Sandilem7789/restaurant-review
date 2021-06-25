@@ -49,7 +49,7 @@ const Restaurant = props => {
     <div>
       {restaurant ? (
         <div>
-          <h5>{restaurant.name}</h5>
+          <h3>{restaurant.name}</h3>
           <p>
             <strong>Cuisine: </strong>{restaurant.cuisine}<br/>
             <strong>Address: </strong>{restaurant.address.building} {restaurant.address.street}, {restaurant.address.zipcode}

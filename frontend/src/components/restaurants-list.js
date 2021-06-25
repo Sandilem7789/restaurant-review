@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import RestaurantDataService from "../services/restaurant";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { 
+  faEye,
+  faMap
+} from "@fortawesome/free-solid-svg-icons";
+
 //this function is structured this way because we wanna pass in some props
 const RestaurantsList = props => {
   const [restaurants, setRestaurants] = useState([]);
@@ -167,8 +173,8 @@ const RestaurantsList = props => {
           return (
             <div className='col-lg-4 pb-1' key={restaurant.address.street}>
               <div className='card'>
-                <div className='card-body'>
-                  <h5 className='card-title'>{restaurant.name}</h5>
+                <div className='card-body text-center'>
+                  <h2 className='card-title'>{restaurant.name}</h2>
                   <p className='card-text'>
                     <strong>Cuisine: </strong>
                     {restaurant.cuisine}
@@ -179,16 +185,20 @@ const RestaurantsList = props => {
                   <div className='row'>
                     <Link
                       to={"/restaurants/" + restaurant._id}
-                      className='btn btn-primary col-lg-5 mx-1 mb-1'
+                      className='btn btn-secondary col-lg-5 mx-0 mx-md-3  mb-1'
                     >
                       View Reviews
+                      {' '}
+                      <div><FontAwesomeIcon icon={faEye} size="3x" /></div>
                     </Link>
+                    
                     <a
                       target='_blank'
                       href={"https://www.google.com/maps/place/" + address}
-                      className='btn btn-primary col-lg-5 mx-1 mb-1'
+                      className='btn btn-secondary col-lg-5 mx-0 mx-md-1 mb-1'
                     >
                       View Map
+                      <div><FontAwesomeIcon icon={faMap} size="3x" /></div>
                     </a>
                   </div>
                 </div>
